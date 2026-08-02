@@ -1,6 +1,7 @@
 # Examples
 
-Runnable, self-contained examples. Each subfolder (or file) should run with a
-single command and show one clear use case.
+- [`basic/`](basic) — an incident snapshot from inside a pod, and the
+  follow-up commands that narrow it down.
 
-- `basic/` — minimal end-to-end example.
+There is nothing to build here: every example is a `docker run` or a
+`kubectl debug` against a pinned tag.

@@ -1,5 +1,7 @@
 site_name: mtr-toolbox
-site_description: One-line description.
+site_description: >-
+  A versioned network-diagnostics image you can name in a runbook and get
+  the same bits next month.
 repo_url: https://github.com/fabiocicerchia/mtr-toolbox
 docs_dir: docs
 

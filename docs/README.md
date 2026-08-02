@@ -1,6 +1,9 @@
 # Documentation
 
-- [Architecture](architecture.md) — high-level design and components.
-- [Getting Started](getting-started.md) — setup and first run.
+- [Getting Started](getting-started.md) — getting a shell in the right network
+  namespace, and the four questions worth asking from it.
+- [Architecture](architecture.md) — what is in the image, why `netreport`
+  never aborts, and why it runs as root.
 
-Add pages here as the project grows (API reference, guides, ADRs).
+The [README](../README.md) covers what the image contains. These pages cover
+using it during the incident it was built for.

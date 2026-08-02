@@ -3,8 +3,8 @@
 FROM alpine:3.22
 LABEL org.opencontainers.image.title="mtr-toolbox" \
       org.opencontainers.image.description="Network diagnostics toolbox: mtr, iperf3, tcpdump, dig, curl, nc" \
-      org.opencontainers.image.licenses="MIT" \
-      org.opencontainers.image.source="https://github.com/fabiocicerchia/freelancing"
+      org.opencontainers.image.licenses="Apache-2.0" \
+      org.opencontainers.image.source="https://github.com/fabiocicerchia/mtr-toolbox"
 RUN apk add --no-cache \
       bash \
       bind-tools \
