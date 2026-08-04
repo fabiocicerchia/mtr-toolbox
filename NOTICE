@@ -3,3 +3,68 @@ Copyright 2026 Fabio Cicerchia
 
 This product includes software developed by
 Fabio Cicerchia (https://github.com/fabiocicerchia).
+
+The Apache-2.0 license on this repository covers the packaging only: the
+Dockerfile and the netreport script. The published container image is a
+collection of upstream diagnostic tools, each redistributed under its own
+license:
+
+  mtr              GPL-2.0-or-later  https://www.bitwizard.nl/mtr/
+  iproute2         GPL-2.0-only      https://wiki.linuxfoundation.org/networking/iproute2
+  ethtool          GPL-2.0-only      https://www.kernel.org/pub/software/network/ethtool/
+  conntrack-tools  GPL-2.0-or-later  https://netfilter.org/projects/conntrack-tools/
+  socat            GPL-2.0-only      http://www.dest-unreach.org/socat/
+  bash             GPL-3.0-or-later  https://git.savannah.gnu.org/cgit/bash.git
+  iputils          BSD-3-Clause      https://github.com/iputils/iputils
+  bind-tools       MPL-2.0           https://www.isc.org/bind/
+  tcpdump          BSD-3-Clause      https://www.tcpdump.org/
+  tcptraceroute    GPL-2.0-or-later  https://github.com/mct/tcptraceroute
+  iperf3           BSD-3-Clause      https://software.es.net/iperf/
+  netcat-openbsd   BSD-3-Clause      https://packages.debian.org/netcat-openbsd
+  curl             curl (MIT-like)   https://curl.se/
+  openssl          Apache-2.0        https://www.openssl.org/
+  nmap             NPSL              https://nmap.org/  (see below)
+
+CORRESPONDING SOURCE (GPL-2.0 section 3 / GPL-3.0 section 6)
+
+Every component above is installed as an unmodified Alpine Linux package.
+Alpine publishes the corresponding source and build recipes at:
+
+  https://gitlab.alpinelinux.org/alpine/aports
+
+Run `apk info -a <package>` inside the image to resolve the exact version
+shipped in a given tag.
+
+NMAP — READ THIS BEFORE REDISTRIBUTING THIS IMAGE
+
+nmap is licensed under the Nmap Public Source License (NPSL), which is
+derived from GPL-2.0 but is NOT an OSI-approved license and is not
+GPL-compatible. It has no SPDX identifier; the image label refers to it
+as LicenseRef-NPSL.
+
+  Copyright (c) Nmap Software LLC. Nmap is a registered trademark of
+  Nmap Software LLC.
+  License: https://nmap.org/npsl/
+  Source:  https://nmap.org/download.html
+
+It is included here on the NPSL's open-source path: this image is free
+software under a permissive license, nmap is the unmodified Alpine
+package, and aggregating it into a container image alongside other tools
+is distribution rather than the creation of a derivative work.
+
+Two conditions travel with that and are not satisfied by this NOTICE:
+
+  * Bundling this image into a proprietary or commercial product, or
+    redistributing it as part of a paid offering, requires a separate
+    Nmap OEM license from Nmap Software LLC. See https://nmap.org/oem/.
+  * A derivative of nmap itself must be licensed under the NPSL. Nothing
+    in this repository derives from nmap; it is installed as-is.
+
+If either of those is a problem for your use, rebuild without it:
+
+  docker build --build-arg ... .   # after removing nmap from the apk line
+
+or drop it at runtime with `apk del nmap`.
+
+The base image is Alpine Linux; its packages carry their own licenses
+(musl MIT, busybox GPL-2.0-only).
