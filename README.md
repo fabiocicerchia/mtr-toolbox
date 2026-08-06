@@ -16,8 +16,8 @@ alternative you can reference from a runbook and get the same bits next month.
 ## Install
 
 ```sh
-make build                       # builds fabiocicerchia/mtr-toolbox:0.1.0 locally
-docker pull fabiocicerchia/mtr-toolbox:0.1.0
+make build                       # builds ghcr.io/fabiocicerchia/mtr-toolbox:1.0.0 locally
+docker pull ghcr.io/fabiocicerchia/mtr-toolbox:1.0.0
 ```
 
 ## Usage
@@ -25,20 +25,20 @@ docker pull fabiocicerchia/mtr-toolbox:0.1.0
 Debug a pod's network namespace:
 
 ```sh
-kubectl debug -it my-pod --image=fabiocicerchia/mtr-toolbox --target=app
+kubectl debug -it my-pod --image=ghcr.io/fabiocicerchia/mtr-toolbox --target=app
 ```
 
 Ad-hoc ephemeral container on a node's host network:
 
 ```sh
 docker run --rm -it --net=host --cap-add=NET_RAW --cap-add=NET_ADMIN \
-  fabiocicerchia/mtr-toolbox
+  ghcr.io/fabiocicerchia/mtr-toolbox
 ```
 
 One-shot incident snapshot:
 
 ```sh
-docker run --rm --net=host fabiocicerchia/mtr-toolbox -c 'netreport api.example.com'
+docker run --rm --net=host ghcr.io/fabiocicerchia/mtr-toolbox -c 'netreport api.example.com'
 ```
 
 ## What's inside
