@@ -5,6 +5,7 @@
 [![Security](https://github.com/fabiocicerchia/mtr-toolbox/actions/workflows/security.yml/badge.svg)](https://github.com/fabiocicerchia/mtr-toolbox/actions/workflows/security.yml)
 [![License](https://img.shields.io/badge/license-Apache_2.0-blue.svg)](LICENSE)
 [![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/fabiocicerchia/mtr-toolbox/badge)](https://securityscorecards.dev/viewer/?uri=github.com/fabiocicerchia/mtr-toolbox)
+[![CI carbon](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/fabiocicerchia/mtr-toolbox/gh-pages/badge.json)](.github/workflows/carbon-badge.yml)
 
 A **versioned** network-diagnostics image: `mtr`, `iperf3`, `tcpdump`, `dig`,
 `nmap`, `socat`, `tcptraceroute`, `conntrack`, `curl`, `nc` and friends — plus
