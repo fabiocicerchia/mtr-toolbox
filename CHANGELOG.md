@@ -5,6 +5,13 @@ All notable changes to this project are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.1](https://github.com/fabiocicerchia/mtr-toolbox/compare/v1.0.0...v1.0.1) (2026-08-10)
+
+
+### Bug Fixes
+
+* publish the image from the release job so it actually runs ([d454634](https://github.com/fabiocicerchia/mtr-toolbox/commit/d4546348e7f09e23217552fce796a71ca7ccf96e))
+
 ## 1.0.0 (2026-08-06)
 
 
