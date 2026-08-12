@@ -1,6 +1,6 @@
 # mtr-toolbox — versioned network-diagnostics image (mtr, iperf3, tcpdump,
 # dig & friends). A slimmer, versioned alternative to netshoot.
-FROM alpine:3.24
+FROM alpine:3.24@sha256:28bd5fe8b56d1bd048e5babf5b10710ebe0bae67db86916198a6eec434943f8b
 LABEL org.opencontainers.image.title="mtr-toolbox" \
       org.opencontainers.image.description="Network diagnostics toolbox: mtr, iperf3, tcpdump, dig, curl, nc" \
       org.opencontainers.image.licenses="Apache-2.0 AND GPL-2.0-or-later AND GPL-3.0-or-later AND MPL-2.0 AND LicenseRef-NPSL" \
