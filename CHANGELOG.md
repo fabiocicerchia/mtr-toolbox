@@ -5,6 +5,13 @@ All notable changes to this project are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.1](https://github.com/fabiocicerchia/mtr-toolbox/compare/v1.1.0...v1.1.1) (2026-08-29)
+
+
+### Bug Fixes
+
+* unblock quality and clear the Scorecard pinned-dependencies finding ([#32](https://github.com/fabiocicerchia/mtr-toolbox/issues/32)) ([cd14b44](https://github.com/fabiocicerchia/mtr-toolbox/commit/cd14b44644cadf555cfa6b8ca91cbf87f1e56a31))
+
 ## [1.1.0](https://github.com/fabiocicerchia/mtr-toolbox/compare/v1.0.2...v1.1.0) (2026-08-25)
 
 
