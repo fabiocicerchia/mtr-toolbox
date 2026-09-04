@@ -5,6 +5,13 @@ All notable changes to this project are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.2](https://github.com/fabiocicerchia/mtr-toolbox/compare/v1.1.1...v1.1.2) (2026-09-04)
+
+
+### Bug Fixes
+
+* **ci:** pin the editorconfig-checker binary version ([#38](https://github.com/fabiocicerchia/mtr-toolbox/issues/38)) ([9165b0d](https://github.com/fabiocicerchia/mtr-toolbox/commit/9165b0d916a702bdf30f02c6a9bee81d5ba78739))
+
 ## [1.1.1](https://github.com/fabiocicerchia/mtr-toolbox/compare/v1.1.0...v1.1.1) (2026-08-29)
 
 
