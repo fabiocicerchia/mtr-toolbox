@@ -3,7 +3,7 @@
 An Alpine base, one `apk add` layer, and one script. There is no application
 here — the deliverable is *a specific set of bytes you can name in a runbook*.
 
-```
+```text
 alpine:3.22
   └── apk add mtr iperf3 tcpdump bind-tools nmap socat netcat-openbsd
               tcptraceroute conntrack-tools iproute2 ethtool iputils
@@ -32,7 +32,7 @@ Everything else in the image is upstream tooling behaving normally. `netreport`
 is the one editorial decision: which five things you always want captured
 before you start theorising.
 
-```
+```text
 netreport            links, addresses, routes, resolv.conf
 netreport <host>     the above, plus dig, ping and an mtr report for that host
 ```
