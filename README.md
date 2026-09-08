@@ -17,8 +17,8 @@ alternative you can reference from a runbook and get the same bits next month.
 ## Install
 
 ```sh
-make build                       # builds ghcr.io/fabiocicerchia/mtr-toolbox:1.0.0 locally
-docker pull ghcr.io/fabiocicerchia/mtr-toolbox:1.0.0
+make build                       # builds the image locally, tagged from version.txt
+docker pull ghcr.io/fabiocicerchia/mtr-toolbox:latest      # or pin a release: :1.1.2
 ```
 
 ## Usage
