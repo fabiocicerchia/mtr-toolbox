@@ -5,6 +5,18 @@ All notable changes to this project are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0](https://github.com/fabiocicerchia/mtr-toolbox/compare/v1.1.2...v1.2.0) (2026-09-08)
+
+
+### Features
+
+* add the eight-verb repo contract ([#47](https://github.com/fabiocicerchia/mtr-toolbox/issues/47)) ([965f59b](https://github.com/fabiocicerchia/mtr-toolbox/commit/965f59be6b0a698fac6eec6b3f6bed9da000c404))
+
+
+### Bug Fixes
+
+* point install docs at an image tag that exists ([#50](https://github.com/fabiocicerchia/mtr-toolbox/issues/50)) ([a331c2e](https://github.com/fabiocicerchia/mtr-toolbox/commit/a331c2ecd0fef72cd67556289798f0816a6296c6))
+
 ## [1.1.2](https://github.com/fabiocicerchia/mtr-toolbox/compare/v1.1.1...v1.1.2) (2026-09-04)
 
 ### Bug Fixes
