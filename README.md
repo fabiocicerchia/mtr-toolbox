@@ -52,6 +52,24 @@ additions welcome, bloat is not.
 Raw-socket tools need `NET_RAW`/`NET_ADMIN`; the image defaults to root for
 that reason. Pass `--user 10001` for the pre-created unprivileged user.
 
+## Verifying the image
+
+Every published image is signed with [cosign][cosign], keyless: the identity in
+the signature is the workflow that published it, not a key anybody holds.
+
+```sh
+cosign verify ghcr.io/fabiocicerchia/mtr-toolbox:latest \
+  --certificate-identity-regexp \
+    'https://github.com/fabiocicerchia/mtr-toolbox/.github/workflows/.*' \
+  --certificate-oidc-issuer https://token.actions.githubusercontent.com
+```
+
+`no signatures found` means the tag predates signing, not that verification was
+set up wrongly — a wrong identity or issuer says so explicitly. Re-run the
+publish workflow for that tag to sign it.
+
+[cosign]: https://docs.sigstore.dev/
+
 ## Development
 
 ### Make targets
