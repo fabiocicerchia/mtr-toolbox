@@ -1,0 +1,39 @@
+.TH NETREPORT 1 "2026-09" "mtr-toolbox" "User Commands"
+.SH NAME
+netreport \- one-shot connectivity snapshot for incident notes
+.SH SYNOPSIS
+.B netreport
+.RI [ host ]
+.SH DESCRIPTION
+Prints one connectivity snapshot: links, addresses, routes and DNS \(em
+and, when given a host, latency and the path to it.
+.PP
+The output is meant to be pasted into an incident note, so it is a single
+run with no options to remember under pressure.
+.SH EXIT STATUS
+.TP
+.B 0
+The snapshot was produced.
+.TP
+.B non-zero
+A required tool was missing, or the host could not be resolved.
+.SH EXAMPLES
+.PP
+Snapshot this host's networking:
+.PP
+.RS
+.B netreport
+.RE
+.PP
+And the path to a dependency:
+.PP
+.RS
+.B netreport db.internal
+.RE
+.SH SEE ALSO
+.BR mtr (8),
+.BR ip (8),
+.BR dig (1).
+Project documentation:
+.UR https://github.com/fabiocicerchia/mtr-toolbox
+.UE
