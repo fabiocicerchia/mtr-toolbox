@@ -5,6 +5,18 @@ All notable changes to this project are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.0](https://github.com/fabiocicerchia/mtr-toolbox/compare/v1.2.0...v1.3.0) (2026-09-10)
+
+
+### Features
+
+* **packaging:** man page, and an install that stages rather than pulls ([#53](https://github.com/fabiocicerchia/mtr-toolbox/issues/53)) ([099f29a](https://github.com/fabiocicerchia/mtr-toolbox/commit/099f29a6f43be19ab704d682ab4be248a8f1a5c4))
+
+
+### Bug Fixes
+
+* **release:** grant id-token on the job that calls the signing workflow ([#56](https://github.com/fabiocicerchia/mtr-toolbox/issues/56)) ([2902ebf](https://github.com/fabiocicerchia/mtr-toolbox/commit/2902ebfebdd8e08e220e599d6e4e2a609261dfbb))
+
 ## [1.2.0](https://github.com/fabiocicerchia/mtr-toolbox/compare/v1.1.2...v1.2.0) (2026-09-08)
 
 
