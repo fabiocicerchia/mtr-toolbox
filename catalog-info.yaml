@@ -1,0 +1,24 @@
+# Backstage catalog entry, read by paved's scorecard plugin.
+#
+# Every check paved scores is derived from this file alone — no cluster
+# access, no CI credentials. What is absent here is absent from the score.
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: mtr-toolbox
+  description: >-
+      A versioned network-diagnostics image: mtr, iperf3, tcpdump, dig, nmap, socat, tcptraceroute,
+      conntrack, curl, nc and friends — plus netreport, a one-shot connectivity snapshot for incident
+      notes.
+  annotations:
+    github.com/project-slug: fabiocicerchia/mtr-toolbox
+    backstage.io/source-location: url:https://github.com/fabiocicerchia/mtr-toolbox/
+    backstage.io/techdocs-ref: dir:.
+  links:
+    - url: https://github.com/fabiocicerchia/mtr-toolbox
+      title: Source
+spec:
+  type: library
+  lifecycle: production
+  owner: group:default/kodebeat
+  system: oss-tools
