@@ -1,0 +1,588 @@
+{
+ "excluded": {
+  "docs/stylesheets": [
+   {
+    "candidate": "Home hero styling (gradient title, tagline, button spacing)",
+    "covered_by": "No docs page contains a hero block (docs/README.md has no class= markup), so readers never see it",
+    "reason": "UNVERIFIABLE",
+    "source": "docs/stylesheets/extra.css#.md-typeset .hero"
+   },
+   {
+    "candidate": "Feature cards with hover lift and accent border",
+    "covered_by": "No docs page uses grid cards",
+    "reason": "UNVERIFIABLE",
+    "source": "docs/stylesheets/extra.css#.md-typeset .grid.cards > ul > li"
+   },
+   {
+    "candidate": "Pill-shaped and gradient primary buttons with a hover lift",
+    "covered_by": "No docs page uses md-button",
+    "reason": "UNVERIFIABLE",
+    "source": "docs/stylesheets/extra.css#.md-typeset .md-button"
+   },
+   {
+    "candidate": "Translucent blurred header with hairline divider and tab opacity",
+    "covered_by": "",
+    "reason": "TRIVIAL",
+    "source": "docs/stylesheets/extra.css#.md-header"
+   },
+   {
+    "candidate": "Heading weights, letter-spacing and font features",
+    "covered_by": "",
+    "reason": "TRIVIAL",
+    "source": "docs/stylesheets/extra.css#.md-typeset h1"
+   },
+   {
+    "candidate": "Rounded, bordered code blocks",
+    "covered_by": "",
+    "reason": "TRIVIAL",
+    "source": "docs/stylesheets/extra.css#.md-typeset .highlight"
+   },
+   {
+    "candidate": "Sidebar title and active link weight",
+    "covered_by": "",
+    "reason": "TRIVIAL",
+    "source": "docs/stylesheets/extra.css#.md-nav__title"
+   },
+   {
+    "candidate": "Footer background and divider",
+    "covered_by": "",
+    "reason": "TRIVIAL",
+    "source": "docs/stylesheets/extra.css#.md-footer-meta"
+   },
+   {
+    "candidate": "Smooth scrolling",
+    "covered_by": "",
+    "reason": "TRIVIAL",
+    "source": "docs/stylesheets/extra.css#html"
+   }
+  ],
+  "mtr-toolbox/dockerfile": [
+   {
+    "candidate": "apk add uses --no-cache so no package index is kept in the image",
+    "covered_by": "",
+    "reason": "TECH_BUILD",
+    "source": "Dockerfile#RUN apk add"
+   },
+   {
+    "candidate": "All packages are installed in a single RUN layer chained with adduser",
+    "covered_by": "",
+    "reason": "TECH_BUILD",
+    "source": "Dockerfile#RUN apk add"
+   },
+   {
+    "candidate": "netreport is copied to /usr/local/bin/netreport",
+    "covered_by": "diagnostics-toolbox.bundled-tools.advertised-tools-present",
+    "reason": "DUPLICATE_OF",
+    "source": "Dockerfile#COPY netreport"
+   },
+   {
+    "candidate": "The image's own header comment calls it a slimmer alternative to netshoot",
+    "covered_by": "",
+    "reason": "TRIVIAL",
+    "source": "Dockerfile#FROM"
+   },
+   {
+    "candidate": "The Dockerfile comment on why nmap is included under the NPSL",
+    "covered_by": "image-supply-chain.license-notices.notice-in-image",
+    "reason": "DUPLICATE_OF",
+    "source": "Dockerfile#RUN apk add"
+   }
+  ],
+  "mtr-toolbox/makefile": [
+   {
+    "candidate": "make build tags the local image as IMAGE:VERSION from version.txt",
+    "covered_by": "",
+    "reason": "TECH_BUILD",
+    "source": "Makefile#build"
+   },
+   {
+    "candidate": "make run builds then opens a throwaway container with ARGS as the command",
+    "covered_by": "",
+    "reason": "TECH_BUILD",
+    "source": "Makefile#run"
+   },
+   {
+    "candidate": "make test builds then runs test.sh against the built image",
+    "covered_by": "",
+    "reason": "TECH_DEVTOOLING",
+    "source": "Makefile#test"
+   },
+   {
+    "candidate": "make lint runs every pre-commit hook on every file",
+    "covered_by": "",
+    "reason": "TECH_DEVTOOLING",
+    "source": "Makefile#lint"
+   },
+   {
+    "candidate": "make setup installs the pre-commit hook",
+    "covered_by": "",
+    "reason": "TECH_DEVTOOLING",
+    "source": "Makefile#setup"
+   },
+   {
+    "candidate": "IMAGE, VERSION and PLATFORMS can be overridden from the environment",
+    "covered_by": "",
+    "reason": "TECH_BUILD",
+    "source": "Makefile (variables, lines 1-3)"
+   },
+   {
+    "candidate": "analyze runs trivy fs with vuln,misconfig,secret scanners at CRITICAL,HIGH when Trivy is present",
+    "covered_by": "",
+    "reason": "INTERNAL_MECHANISM",
+    "source": "Makefile#analyze"
+   }
+  ],
+  "mtr-toolbox/netreport": [
+   {
+    "candidate": "Only the first argument is used; extra arguments are silently ignored",
+    "covered_by": "",
+    "reason": "TRIVIAL",
+    "source": "netreport#section"
+   },
+   {
+    "candidate": "A target beginning with '-' is passed through to dig/ping/mtr as an option",
+    "covered_by": "",
+    "reason": "TRIVIAL",
+    "source": "netreport#section"
+   },
+   {
+    "candidate": "netreport is copied into the image at /usr/local/bin",
+    "covered_by": "",
+    "reason": "TECH_BUILD",
+    "source": "Dockerfile"
+   },
+   {
+    "candidate": "Smoke test runs netreport inside the built image",
+    "covered_by": "",
+    "reason": "TECH_DEVTOOLING",
+    "source": "test.sh"
+   },
+   {
+    "candidate": "make install/uninstall of netreport and its man page",
+    "covered_by": "",
+    "reason": "TECH_BUILD",
+    "source": "Makefile"
+   }
+  ]
+ },
+ "lifted": {
+  "docs/stylesheets": [],
+  "mtr-toolbox/dockerfile": [
+   {
+    "from_source": "Dockerfile#RUN apk add",
+    "rule": "Redistributing the image inside a proprietary or paid product needs a separate Nmap OEM licence (stated in /NOTICE)"
+   }
+  ],
+  "mtr-toolbox/makefile": [],
+  "mtr-toolbox/netreport": []
+ },
+ "retired": [],
+ "scenarios": {
+  "build-and-release.host-install.001": {
+   "file": "specs/build-and-release/host-install/host-install.feature",
+   "fingerprint": "81c950319aa6",
+   "human": false,
+   "rule": "host-install.netreport.installs-under-destdir-and-prefix",
+   "source": "Makefile#install",
+   "status": "inferred",
+   "test": "",
+   "tests": []
+  },
+  "build-and-release.host-install.002": {
+   "file": "specs/build-and-release/host-install/host-install.feature",
+   "fingerprint": "81c950319aa6",
+   "human": false,
+   "rule": "host-install.netreport.prefix-has-no-default",
+   "source": "Makefile#install",
+   "status": "inferred",
+   "test": "",
+   "tests": []
+  },
+  "build-and-release.host-install.003": {
+   "file": "specs/build-and-release/host-install/host-install.feature",
+   "fingerprint": "9ee79c6e29aa",
+   "human": false,
+   "rule": "host-install.netreport.uninstall-removes-installed-files",
+   "source": "Makefile#uninstall",
+   "status": "inferred",
+   "test": "",
+   "tests": []
+  },
+  "build-and-release.publishing.001": {
+   "file": "specs/build-and-release/publishing/image-publishing.feature",
+   "fingerprint": "ec888f7c2110",
+   "human": false,
+   "rule": "release.image.tags-version-and-latest-multi-arch",
+   "source": "Makefile#release",
+   "status": "inferred",
+   "test": "",
+   "tests": []
+  },
+  "build-and-release.publishing.002": {
+   "file": "specs/build-and-release/publishing/image-publishing.feature",
+   "fingerprint": "b755c349f1bc",
+   "human": false,
+   "rule": "release.image.push-only-version-tag",
+   "source": "Makefile#push",
+   "status": "inferred",
+   "test": "",
+   "tests": []
+  },
+  "connectivity-snapshot.local-network-state.001": {
+   "file": "specs/connectivity-snapshot/local-network-state/local-network-snapshot.feature",
+   "fingerprint": "c6657112c439",
+   "human": false,
+   "rule": "connectivity.snapshot.local-sections-in-fixed-order",
+   "source": "netreport#section",
+   "status": "inferred",
+   "test": "",
+   "tests": []
+  },
+  "connectivity-snapshot.local-network-state.002": {
+   "file": "specs/connectivity-snapshot/local-network-state/local-network-snapshot.feature",
+   "fingerprint": "c6657112c439",
+   "human": false,
+   "rule": "connectivity.snapshot.no-target-no-probing",
+   "source": "netreport#section",
+   "status": "inferred",
+   "test": "",
+   "tests": []
+  },
+  "connectivity-snapshot.local-network-state.003": {
+   "file": "specs/connectivity-snapshot/local-network-state/local-network-snapshot.feature",
+   "fingerprint": "c6657112c439",
+   "human": false,
+   "rule": "connectivity.snapshot.continues-past-missing-tool",
+   "source": "netreport#section",
+   "status": "inferred",
+   "test": "",
+   "tests": []
+  },
+  "connectivity-snapshot.target-probing.001": {
+   "file": "specs/connectivity-snapshot/target-probing/target-probing.feature",
+   "fingerprint": "c6657112c439",
+   "human": false,
+   "rule": "connectivity.probing.resolve-ping-path-sections",
+   "source": "netreport#section",
+   "status": "inferred",
+   "test": "",
+   "tests": []
+  },
+  "connectivity-snapshot.target-probing.002": {
+   "file": "specs/connectivity-snapshot/target-probing/target-probing.feature",
+   "fingerprint": "c6657112c439",
+   "human": false,
+   "rule": "connectivity.probing.continues-after-failed-step",
+   "source": "netreport#section",
+   "status": "inferred",
+   "test": "",
+   "tests": []
+  },
+  "connectivity-snapshot.target-probing.003": {
+   "file": "specs/connectivity-snapshot/target-probing/target-probing.feature",
+   "fingerprint": "c6657112c439",
+   "human": false,
+   "rule": "connectivity.probing.unresolvable-target-exits-zero",
+   "source": "netreport#section",
+   "status": "inferred",
+   "test": "",
+   "tests": []
+  },
+  "developer-tooling.auto-formatting.001": {
+   "file": "specs/developer-tooling/auto-formatting/auto-formatting.feature",
+   "fingerprint": "a675569d9b1e",
+   "human": false,
+   "rule": "devtools.format.rewrite-is-not-failure",
+   "source": "Makefile#format",
+   "status": "inferred",
+   "test": "",
+   "tests": []
+  },
+  "developer-tooling.command-discovery.001": {
+   "file": "specs/developer-tooling/command-discovery/command-discovery.feature",
+   "fingerprint": "517de792f113",
+   "human": false,
+   "rule": "devtools.make.bare-make-lists-commands",
+   "source": "Makefile#help",
+   "status": "inferred",
+   "test": "",
+   "tests": []
+  },
+  "developer-tooling.security-scanning.001": {
+   "file": "specs/developer-tooling/security-scanning/security-scanning.feature",
+   "fingerprint": "eee6cffaed8d",
+   "human": false,
+   "rule": "devtools.analyze.missing-trivy-refused",
+   "source": "Makefile#analyze",
+   "status": "inferred",
+   "test": "",
+   "tests": []
+  },
+  "diagnostics-toolbox.bundled-tools.001": {
+   "file": "specs/diagnostics-toolbox/bundled-tools/bundled-diagnostic-tools.feature",
+   "fingerprint": "f20967eaecd0",
+   "human": false,
+   "rule": "diagnostics-toolbox.bundled-tools.advertised-tools-present",
+   "source": "Dockerfile#RUN apk add",
+   "status": "inferred",
+   "test": "",
+   "tests": []
+  },
+  "diagnostics-toolbox.privileges.001": {
+   "file": "specs/diagnostics-toolbox/privileges/toolbox-privileges.feature",
+   "fingerprint": "2cabaff65bcc",
+   "human": false,
+   "rule": "diagnostics-toolbox.privileges.root-by-default",
+   "source": "Dockerfile#ENTRYPOINT",
+   "status": "inferred",
+   "test": "",
+   "tests": []
+  },
+  "diagnostics-toolbox.privileges.002": {
+   "file": "specs/diagnostics-toolbox/privileges/toolbox-privileges.feature",
+   "fingerprint": "f20967eaecd0",
+   "human": false,
+   "rule": "diagnostics-toolbox.privileges.unprivileged-user-10001",
+   "source": "Dockerfile#RUN apk add",
+   "status": "inferred",
+   "test": "",
+   "tests": []
+  },
+  "diagnostics-toolbox.shell-access.001": {
+   "file": "specs/diagnostics-toolbox/shell-access/toolbox-shell-access.feature",
+   "fingerprint": "2cabaff65bcc",
+   "human": false,
+   "rule": "diagnostics-toolbox.shell-access.starts-in-bash",
+   "source": "Dockerfile#ENTRYPOINT",
+   "status": "inferred",
+   "test": "",
+   "tests": []
+  },
+  "documentation-site.page-layout.001": {
+   "file": "specs/documentation-site/page-layout/docs-page-layout.feature",
+   "fingerprint": "c702704e5aae",
+   "human": false,
+   "rule": "docs.layout.no-placeholder-logo",
+   "source": "docs/stylesheets/extra.css#.md-header__button.md-logo",
+   "status": "inferred",
+   "test": "",
+   "tests": []
+  },
+  "documentation-site.page-layout.002": {
+   "file": "specs/documentation-site/page-layout/docs-page-layout.feature",
+   "fingerprint": "721086d36c47",
+   "human": false,
+   "rule": "docs.layout.tables-fit-narrow-screens",
+   "source": "docs/stylesheets/extra.css#.md-typeset table:not([class])",
+   "status": "inferred",
+   "test": "",
+   "tests": []
+  },
+  "documentation-site.theme-palette.001": {
+   "file": "specs/documentation-site/theme-palette/docs-theme-palette.feature",
+   "fingerprint": "564588beee72",
+   "human": false,
+   "rule": "docs.theme.single-accent-palette",
+   "source": "docs/stylesheets/extra.css#:root",
+   "status": "inferred",
+   "test": "",
+   "tests": []
+  },
+  "documentation-site.theme-palette.002": {
+   "file": "specs/documentation-site/theme-palette/docs-theme-palette.feature",
+   "fingerprint": "433084a194b6",
+   "human": false,
+   "rule": "docs.theme.scheme-legible-links",
+   "source": "docs/stylesheets/extra.css#[data-md-color-scheme=\"slate\"]",
+   "status": "inferred",
+   "test": "",
+   "tests": []
+  },
+  "documentation-site.theme-palette.003": {
+   "file": "specs/documentation-site/theme-palette/docs-theme-palette.feature",
+   "fingerprint": "564588beee72",
+   "human": false,
+   "rule": "docs.theme.no-network-assets",
+   "source": "docs/stylesheets/extra.css#:root",
+   "status": "inferred",
+   "test": "",
+   "tests": []
+  },
+  "image-supply-chain.image-metadata.001": {
+   "file": "specs/image-supply-chain/image-metadata/image-metadata.feature",
+   "fingerprint": "be62475513eb",
+   "human": false,
+   "rule": "image-supply-chain.image-metadata.oci-labels",
+   "source": "Dockerfile#LABEL",
+   "status": "inferred",
+   "test": "",
+   "tests": []
+  },
+  "image-supply-chain.license-notices.001": {
+   "file": "specs/image-supply-chain/license-notices/license-notices.feature",
+   "fingerprint": "d37f4a7e073f",
+   "human": false,
+   "rule": "image-supply-chain.license-notices.notice-in-image",
+   "source": "Dockerfile#COPY NOTICE",
+   "status": "inferred",
+   "test": "",
+   "tests": []
+  },
+  "image-supply-chain.pinned-base.001": {
+   "file": "specs/image-supply-chain/pinned-base/pinned-base-image.feature",
+   "fingerprint": "69140fe0a03b",
+   "human": false,
+   "rule": "image-supply-chain.pinned-base.alpine-digest-pinned",
+   "source": "Dockerfile#FROM",
+   "status": "inferred",
+   "test": "",
+   "tests": []
+  }
+ },
+ "taxonomy": {
+  "domains": [
+   {
+    "areas": [
+     {
+      "description": "Lists interfaces, addresses, routes and the DNS resolver config, each under its own section.",
+      "slug": "local-network-state",
+      "title": "Local network state"
+     },
+     {
+      "description": "For an optional target host, resolves its name, pings it and traces the path with an mtr report, carrying on if any step fails.",
+      "slug": "target-probing",
+      "title": "Target probing"
+     },
+     {
+      "description": "Fixed, greppable section headers and a stable order, so incident notes can be compared and searched.",
+      "slug": "report-format",
+      "title": "Report format"
+     }
+    ],
+    "description": "netreport, the one-shot report of a host's network state that gets pasted into incident notes.",
+    "slug": "connectivity-snapshot",
+    "title": "Connectivity snapshot"
+   },
+   {
+    "areas": [
+     {
+      "description": "The pinned set of tools for path tracing, throughput, packet capture, DNS, scanning, sockets, conntrack and HTTP.",
+      "slug": "bundled-tools",
+      "title": "Bundled tools"
+     },
+     {
+      "description": "The image starts in a bash shell, so you can run any bundled tool or netreport in it straight away.",
+      "slug": "shell-access",
+      "title": "Shell access"
+     },
+     {
+      "description": "Runs as root by default so raw-socket tools work, and has an unprivileged user (uid 10001) for running without root.",
+      "slug": "privileges",
+      "title": "Privileges"
+     }
+    ],
+    "description": "The network tools the image ships and how an operator gets a shell to use them.",
+    "slug": "diagnostics-toolbox",
+    "title": "Diagnostics toolbox"
+   },
+   {
+    "areas": [
+     {
+      "description": "A digest-pinned Alpine base, so a given version always rebuilds the same way.",
+      "slug": "pinned-base",
+      "title": "Pinned base image"
+     },
+     {
+      "description": "OCI labels for the image's title, description, source repository and combined licence expression.",
+      "slug": "image-metadata",
+      "title": "Image metadata"
+     },
+     {
+      "description": "A NOTICE file inside the image, including the terms that cover the bundled nmap (NPSL).",
+      "slug": "license-notices",
+      "title": "License notices"
+     }
+    ],
+    "description": "What the published image declares about where it came from, its version pins and its licences.",
+    "slug": "image-supply-chain",
+    "title": "Image provenance and licensing"
+   },
+   {
+    "areas": [
+     {
+      "description": "Builds the versioned image locally and opens a throwaway shell or command in it.",
+      "slug": "local-build-run",
+      "title": "Local build and run"
+     },
+     {
+      "description": "Builds the image, then runs the smoke tests against it.",
+      "slug": "smoke-tests",
+      "title": "Smoke tests"
+     },
+     {
+      "description": "Pushes the version tag, or does a multi-arch (amd64/arm64) buildx release tagged with the version and latest.",
+      "slug": "publishing",
+      "title": "Publishing"
+     },
+     {
+      "description": "Installs or uninstalls netreport and its man page on a host, honouring DESTDIR and PREFIX.",
+      "slug": "host-install",
+      "title": "Host install"
+     }
+    ],
+    "description": "Building, testing, publishing and installing the toolbox.",
+    "slug": "build-and-release",
+    "title": "Build and release"
+   },
+   {
+    "areas": [
+     {
+      "description": "Running make on its own lists every available command with its description.",
+      "slug": "command-discovery",
+      "title": "Command discovery"
+     },
+     {
+      "description": "Sets up the pre-commit hook and runs every hook on every file, the same gate CI uses.",
+      "slug": "quality-gate",
+      "title": "Quality gate"
+     },
+     {
+      "description": "Fixes trailing whitespace, missing final newlines and mixed line endings, and doesn't treat a hook rewriting a file as a failure.",
+      "slug": "auto-formatting",
+      "title": "Auto-formatting"
+     },
+     {
+      "description": "Runs a Trivy scan of the tree for vulnerabilities, misconfigurations and secrets, and exits with a clear error if Trivy is missing.",
+      "slug": "security-scanning",
+      "title": "Security scanning"
+     }
+    ],
+    "description": "How contributors discover commands and keep the tree clean, formatted and secure.",
+    "slug": "developer-tooling",
+    "title": "Developer tooling"
+   },
+   {
+    "areas": [
+     {
+      "description": "One accent colour pair shared by the docs and the splash page, with light and dark schemes and nothing loaded over the network.",
+      "slug": "theme-palette",
+      "title": "Theme and palette"
+     },
+     {
+      "description": "The header, tabs, sidebar, typography, code blocks and responsive tables.",
+      "slug": "page-layout",
+      "title": "Page layout"
+     },
+     {
+      "description": "The home hero, call-to-action buttons and feature cards with hover depth.",
+      "slug": "landing-components",
+      "title": "Landing components"
+     }
+    ],
+    "description": "The look of the project's docs site and its landing page.",
+    "slug": "documentation-site",
+    "title": "Documentation site"
+   }
+  ]
+ }
+}
