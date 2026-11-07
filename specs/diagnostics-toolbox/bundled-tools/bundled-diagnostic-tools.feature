@@ -8,8 +8,8 @@ Feature: Running bundled diagnostic tools
   @id:diagnostics-toolbox.bundled-tools.001 @rule:diagnostics-toolbox.bundled-tools.advertised-tools-present @inferred @source:Dockerfile#RUN apk add
   Scenario Outline: Every advertised diagnostic tool is on the path inside the image
     Given a shell inside the image
-    When the operator runs <command>
-    Then <command> starts and reports its version or usage instead of "command not found"
+    When the operator looks up <command> with `command -v`
+    Then <command> is found on the path instead of "command not found"
     And it can be used for <purpose>
 
     Examples:

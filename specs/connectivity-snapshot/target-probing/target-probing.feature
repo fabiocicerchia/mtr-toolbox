@@ -10,7 +10,7 @@ Feature: Probing a target host
     Given the target host "api.example.com" is reachable
     When the operator runs netreport with target "api.example.com"
     Then after the DNS section the output contains "===== RESOLVE api.example.com =====", "===== PING api.example.com =====" and "===== PATH api.example.com =====" in that order
-    And the RESOLVE section lists the target's addresses, one per line with no other text
+    And the RESOLVE section lists the target's short DNS answers (addresses, or the CNAME chain then addresses), one per line with no other text
     And the PING section shows 3 echo requests, each waiting at most 2 seconds for a reply
     And the PATH section shows an mtr report over 5 cycles
     And the command exits with status 0

@@ -11,7 +11,7 @@ Feature: Theming the documentation site
     When a visitor opens the splash page and then the rendered docs
     Then the splash page title and the primary button use a gradient from #38bdf8 to #3b82f6
     And the "Install" label and the "Full docs" link on the splash page are #3b82f6
-    And the docs header, the tabs and the links in light mode are #3b82f6
+    And the docs home hero title and primary buttons use the same gradient, and links in light mode are #3b82f6
     And changing the pair in the docs theme changes both the splash page and the docs
 
   @id:documentation-site.theme-palette.002 @rule:docs.theme.scheme-legible-links @inferred @source:docs/stylesheets/extra.css#[data-md-color-scheme="slate"]

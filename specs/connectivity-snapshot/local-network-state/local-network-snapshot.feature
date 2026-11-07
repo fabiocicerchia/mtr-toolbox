@@ -22,7 +22,7 @@ Feature: Snapshotting local network state
     When the operator runs netreport
     Then the last section is "===== DNS ====="
     And no RESOLVE, PING or PATH section appears
-    And the command exits with status 0 when the resolver config is readable
+    And the command exits with status 0
 
   @id:connectivity-snapshot.local-network-state.003 @rule:connectivity.snapshot.continues-past-missing-tool @inferred @source:netreport#section @questionable
   Scenario: A missing tool doesn't stop the snapshot or make it fail

@@ -4,8 +4,8 @@ Feature: Discovering the available commands
 
   @id:developer-tooling.command-discovery.001 @rule:devtools.make.bare-make-lists-commands @inferred @source:Makefile#help
   Scenario: Running make with no target lists every command and its description
-    Given Given a checkout of mtr-toolbox
-    When When the contributor runs make with no target
-    Then Then nothing is built or pushed
-    And And each command is listed with its description, one per line
-    And And the list includes "build", "test", "lint", "install", "analyze", "push" and "release"
+    Given a checkout of mtr-toolbox
+    When the contributor runs make with no target
+    Then nothing is built or pushed
+    And each command is listed with its description, one per line
+    And the list includes "build", "test", "lint", "install", "analyze", "push" and "release"
