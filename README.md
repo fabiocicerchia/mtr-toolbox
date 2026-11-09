@@ -1,5 +1,11 @@
 # mtr-toolbox
 
+> [!WARNING]
+> **This project is retired** and no longer maintained. If you need something
+> for this, [netshoot](https://github.com/nicolaka/netshoot) is the Docker and
+> Kubernetes network-troubleshooting container this image was a slimmer take on.
+> It is a separate project, actively developed, and worth a look.
+
 [![CI](https://github.com/fabiocicerchia/mtr-toolbox/actions/workflows/ci.yml/badge.svg)](https://github.com/fabiocicerchia/mtr-toolbox/actions/workflows/ci.yml)
 [![Code Quality](https://github.com/fabiocicerchia/mtr-toolbox/actions/workflows/code-quality.yml/badge.svg)](https://github.com/fabiocicerchia/mtr-toolbox/actions/workflows/code-quality.yml)
 [![Security](https://github.com/fabiocicerchia/mtr-toolbox/actions/workflows/security.yml/badge.svg)](https://github.com/fabiocicerchia/mtr-toolbox/actions/workflows/security.yml)
